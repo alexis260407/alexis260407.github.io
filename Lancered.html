@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>...</title>
+<link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+<div id="container">
+  <img id="image" src="Image/Soul.png" alt="Image" onclick="changeImage()">
+  <div id="text">Texte à afficher</div>
+</div>
+
+<audio id="audio" src="Audio/HO_HO_HO!_YOU_JUST_GOT_LANCERED!.mp3"></audio>
+
+<script>
+  var image = document.getElementById('image');
+  var text = document.getElementById('text');
+  var audio = document.getElementById('audio');
+
+  function changeImage() {
+    if (image.src.endsWith('Image/Soul.png')) {
+      image.src = 'Image/lancer-spin-biggrand.gif';
+      text.style.display = 'block';
+      text.innerHTML = 'Vous vous êtes fais lancered !';
+      audio.play();
+      document.title = "TU T'ES FAIS LANCERED !";
+    } else {
+      image.src = 'Image/Untitled_2.jpg';
+      text.style.display = 'none';
+      audio.pause();
+      audio.currentTime = 0;
+      document.title = 'Ralsei: Doobie.';
+    }
+  }
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
